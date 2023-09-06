@@ -13,6 +13,12 @@ const timeout = function (s) {
   });
 };
 
+/**
+ * Makes AJAX calls to an API
+ * @param {String} url The URL of the API
+ * @param {Object} uploadData An options object, passed in when making POST request to the API
+ * @returns Promise with the data returned from the API as the resolving value
+ */
 export const AJAX = async function (url, uploadData = undefined) {
   try {
     const fetchPro = uploadData
@@ -36,43 +42,3 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw err;
   }
 };
-
-/**
- * Gets the data from the URL in the form of an object
- * @param {string} url The URL to be fetched
- * @returns A promise with the data from the url as the resolved value
- */
-// export const getJSON = async function (url) {
-//   try {
-//     const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
-//     const data = await res.json();
-
-//     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-
-//     return data;
-//   } catch (err) {
-//     console.log(err);
-//     throw err;
-//   }
-// };
-
-// export const sendJSON = async function (url, uploadData) {
-//   try {
-//     const send = fetch(url, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(uploadData),
-//     });
-
-//     const res = await Promise.race([send, timeout(TIMEOUT_SEC)]);
-//     const data = await res.json();
-
-//     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-
-//     return data;
-//   } catch (err) {
-//     throw err;
-//   }
-// };

@@ -14,7 +14,6 @@ export const state = {
 };
 
 /**
- *
  * @param {Object} data Object containing the recipe object and the status
  * of the AJAX call
  * @returns A recipe object with formatted entries

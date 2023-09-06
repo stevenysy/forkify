@@ -83,8 +83,6 @@ export default class View {
     </div>
     `;
 
-    console.log(this._errorMessage);
-
     this._clear();
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }

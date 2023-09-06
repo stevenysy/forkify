@@ -12,11 +12,6 @@ import addRecipeView from "./views/addRecipeView.js";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-// Hot module reloading
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 /**
  * Controller function for events on the recipe parent element
  */
@@ -163,6 +158,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlUploadRecipe);
-  console.log("Welcome to the app!");
 };
 init();
