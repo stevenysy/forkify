@@ -200,4 +200,17 @@ init();
 const clearBookmarks = function () {
   localStorage.clear("bookmarks");
 };
-// clearBookmarks();
+
+/**
+ * Deletes recipe with the given id associated with the key from the API
+ * @param {String} id
+ */
+const deleteRecipe = async function (id) {
+  await fetch(`${API_URL}/${id}?key=${KEY}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: null,
+  });
+};
