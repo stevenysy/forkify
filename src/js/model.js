@@ -79,6 +79,7 @@ export const loadSearchResults = async function (query) {
     if (!data || !data.results)
       throw new Error(`No recipe found for query "${query}"!`);
 
+    // Create object with less information for each search result
     state.search.results = data.data.recipes.map(rec => {
       return {
         id: rec.id,
